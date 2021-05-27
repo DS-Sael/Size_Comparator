@@ -1,0 +1,36 @@
+.character{
+  margin: 50px;
+  height:75vh;
+  background-color: #787878;
+}
+
+.side-by-side{
+  display:flex;
+  float: left;
+}
+
+.title-field{
+  width:100%;
+}
+
+.field{
+  font-size:30px;
+  width:25%;
+}
+
+.label{
+
+  margin-right:5px;
+}
+
+.title-input{
+  margin-top:2px;
+}
+
+.right-elem{
+  float: right;
+}
+
+.measurement{
+  width:70px;
+}

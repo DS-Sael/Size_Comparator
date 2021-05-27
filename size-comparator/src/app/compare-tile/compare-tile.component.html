@@ -1,0 +1,39 @@
+<form class="character-form">
+  <mat-card class="character">
+    <mat-form-field class="title-field character-name">
+      <mat-card-title><span class="side-by-side label">Nom : </span><span class="side-by-side title-input"><input matInput
+                                                                                                            value=""></span>
+      </mat-card-title>
+    </mat-form-field>
+    <p>
+      <mat-form-field class="field character-normal-size">
+        <mat-label>taille normale</mat-label>
+        <input name="normal-size" matInput class="input" value="">
+      </mat-form-field>
+
+      <mat-form-field class="field measurement">
+        <mat-select>
+          <mat-option value="km">km</mat-option>
+          <mat-option value="km">m</mat-option>
+          <mat-option value="km">cm</mat-option>
+          <mat-option value="km">mm</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="field character-new-size ">
+        <mat-label>taille modifiée</mat-label>
+        <input name="changed-size" matInput class="input" value="">
+      </mat-form-field>
+
+      <mat-form-field class="field measurement">
+        <mat-select>
+          <mat-option value="km">km</mat-option>
+          <mat-option value="km">m</mat-option>
+          <mat-option value="km">cm</mat-option>
+          <mat-option value="km">mm</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+  </mat-card>
+</form>

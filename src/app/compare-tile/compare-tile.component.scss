@@ -1,6 +1,5 @@
 .character{
   margin: 50px;
-  height:75vh;
   background-color: #787878;
 }
 
@@ -9,13 +8,17 @@
   float: left;
 }
 
+::ng-deep .mat-grid-tile .mat-figure {
+  justify-content: end !important;
+}
+
 .title-field{
   width:100%;
 }
 
 .field{
   font-size:30px;
-  width:25%;
+  width:50%;
 }
 
 .label{
@@ -33,4 +36,15 @@
 
 .measurement{
   width:70px;
+}
+
+.compare-image {
+  img{
+    width:50%;
+  }
+  text-align: center;
+}
+
+.description{
+  font-size:30px;
 }

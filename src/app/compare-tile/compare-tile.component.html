@@ -1,8 +1,10 @@
-<form class="character-form" xmlns="">
+<form class="character-form" [formGroup]="formGroup" xmlns="">
   <mat-card class="character">
     <mat-form-field class="title-field character-name">
       <mat-card-title><span class="side-by-side label">Nom : </span><span class="side-by-side title-input"><input
         matInput
+        formControlName="character-name"
+        name="character-name"
         value=""></span>
       </mat-card-title>
     </mat-form-field>
@@ -12,33 +14,33 @@
       <mat-grid-tile>
           <mat-form-field class="field character-normal-size">
             <mat-label>taille normale</mat-label>
-            <input name="normal-size" matInput class="input" value="">
+            <input formControlName="normal-size" name="normal-size" matInput class="input" value="">
           </mat-form-field>
           <mat-form-field class="field measurement">
-            <mat-select>
+            <mat-select  formControlName="normal-measure" >
               <mat-option value="km">km</mat-option>
-              <mat-option value="km">m</mat-option>
-              <mat-option value="km">cm</mat-option>
-              <mat-option value="km">mm</mat-option>
+              <mat-option value="m">m</mat-option>
+              <mat-option value="cm">cm</mat-option>
+              <mat-option value="mm">mm</mat-option>
             </mat-select>
           </mat-form-field>
       </mat-grid-tile>
       </div>
       <div>
       <mat-grid-tile rowspan="2">
-        <p class="description">Pour Sael, Tina fait la taille de la Tour Eiffel</p>
+        <p class="description" [innerText]="description"></p>
       </mat-grid-tile>
       <mat-grid-tile>
           <mat-form-field class="field character-new-size ">
             <mat-label>taille modifiée</mat-label>
-            <input name="changed-size" matInput class="input" value="">
+            <input formControlName="changed-size" name="changed-size" matInput class="input" value="">
           </mat-form-field>
-          <mat-form-field class="field measurement">
-            <mat-select>
+          <mat-form-field  class="field measurement">
+            <mat-select formControlName="changed-measure">
               <mat-option value="km">km</mat-option>
-              <mat-option value="km">m</mat-option>
-              <mat-option value="km">cm</mat-option>
-              <mat-option value="km">mm</mat-option>
+              <mat-option value="m">m</mat-option>
+              <mat-option value="cm">cm</mat-option>
+              <mat-option value="mm">mm</mat-option>
             </mat-select>
           </mat-form-field>
       </mat-grid-tile>

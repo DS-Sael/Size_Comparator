@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {Calculation} from "./calculation";
+import {ImageTable} from "./image-table";
 
 @Component({
   selector: 'app-root',
@@ -61,7 +62,9 @@ export class AppComponent implements OnInit {
     if(Math.floor(valueB) != valueB){
       valueB = valueB.toFixed(2);
     }
-    this.descCharacterA = `Pour ${this.characterA.value['character-name']}, ${this.characterB.value['character-name']} mesure ${valueA}${result[0].unit}`;
-    this.descCharacterB = `Pour ${this.characterB.value['character-name']}, ${this.characterA.value['character-name']} mesure ${valueB}${result[1].unit}`;
+    let compareImageA = ImageTable.findCloseSize(Calculation.toMillimeter(valueA, result[0].unit));
+    let compareImageB = ImageTable.findCloseSize(Calculation.toMillimeter(valueB, result[1].unit));
+    this.descCharacterA = `Pour ${this.characterA.value['character-name']}, ${this.characterB.value['character-name']} mesure ${valueA}${result[0].unit} soit la taille d${compareImageA.name.match(/^[aeiouy].*$/i)?"'":"e "}${compareImageA.name}`;
+    this.descCharacterB = `Pour ${this.characterB.value['character-name']}, ${this.characterA.value['character-name']} mesure ${valueB}${result[1].unit} soit la taille d${compareImageB.name.match(/^[aeiouy].*$/i)?"'":"e "}${compareImageB.name}`;
   }
 }

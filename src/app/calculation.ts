@@ -10,4 +10,8 @@ export class Calculation {
     let result2 = convert((firstExtraSize * secondNormalSize) / secondExtraSize).from('mm').toBest();
     return [result1,result2];
   }
+
+  static toMillimeter(size,unit){
+    return convert(size).from(unit).to("mm");
+  }
 }

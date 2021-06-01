@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
   }
 
   checkNull(toCheck: string, defaultValue = ""){
-    if(toCheck == "null"){
+    if(!toCheck || toCheck == "null"){
       return defaultValue;
     }
     else{

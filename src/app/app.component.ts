@@ -64,7 +64,17 @@ export class AppComponent implements OnInit {
     }
     let compareImageA = ImageTable.findCloseSize(Calculation.toMillimeter(valueA, result[0].unit));
     let compareImageB = ImageTable.findCloseSize(Calculation.toMillimeter(valueB, result[1].unit));
-    this.descCharacterA = `Pour ${this.characterA.value['character-name']}, ${this.characterB.value['character-name']} mesure ${valueA}${result[0].unit} soit la taille d${compareImageA.name.match(/^[aeiouy].*$/i)?"'":"e "}${compareImageA.name}`;
-    this.descCharacterB = `Pour ${this.characterB.value['character-name']}, ${this.characterA.value['character-name']} mesure ${valueB}${result[1].unit} soit la taille d${compareImageB.name.match(/^[aeiouy].*$/i)?"'":"e "}${compareImageB.name}`;
+    let sizeImageA = Calculation.toBest(compareImageA.size,"mm");
+    let sizeImageB = Calculation.toBest(compareImageB.size,"mm");
+    let sizeImageValueA = sizeImageA.val;
+    let sizeImageValueB = sizeImageB.val;
+    if(Math.floor(sizeImageValueA) != sizeImageValueA){
+      sizeImageValueA = sizeImageValueA.toFixed(2);
+    }
+    if(Math.floor(sizeImageValueB) != sizeImageValueB){
+      sizeImageValueB = sizeImageValueB.toFixed(2);
+    }
+    this.descCharacterA = `Pour ${this.characterA.value['character-name']}, ${this.characterB.value['character-name']} mesure ${valueA}${result[0].unit} soit approximativement ${compareImageA.name} (${sizeImageValueA}${sizeImageA.unit})`;
+    this.descCharacterB = `Pour ${this.characterB.value['character-name']}, ${this.characterA.value['character-name']} mesure ${valueB}${result[1].unit} soit approximativement ${compareImageB.name} (${sizeImageValueB}${sizeImageB.unit})`;
   }
 }

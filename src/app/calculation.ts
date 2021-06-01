@@ -14,4 +14,7 @@ export class Calculation {
   static toMillimeter(size,unit){
     return convert(size).from(unit).to("mm");
   }
+  static toBest(size,unit){
+    return convert(size).from(unit).toBest();
+  }
 }

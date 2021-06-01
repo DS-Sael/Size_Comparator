@@ -14,7 +14,7 @@
       <mat-grid-tile>
           <mat-form-field class="field character-normal-size">
             <mat-label>taille normale</mat-label>
-            <input formControlName="normal-size" name="normal-size" matInput class="input" value="">
+            <input type="number" formControlName="normal-size" name="normal-size" matInput class="input" value="">
           </mat-form-field>
           <mat-form-field class="field measurement">
             <mat-select  formControlName="normal-measure" >
@@ -33,7 +33,7 @@
       <mat-grid-tile>
           <mat-form-field class="field character-new-size ">
             <mat-label>taille modifiée</mat-label>
-            <input formControlName="changed-size" name="changed-size" matInput class="input" value="">
+            <input type="number" formControlName="changed-size" name="changed-size" matInput class="input" value="">
           </mat-form-field>
           <mat-form-field  class="field measurement">
             <mat-select formControlName="changed-measure">
@@ -48,7 +48,7 @@
     </mat-grid-list>
     </mat-card-content>
     <div class="compare-image">
-      <img mat-card-image src="../../assets/images/compare/eiffel_tower.png"/>
+      <img alt="compared-image" mat-card-image src="../../assets/images/compare/eiffel_tower.png"/>
     </div>
   </mat-card>
 </form>

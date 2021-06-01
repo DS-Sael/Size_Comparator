@@ -55,7 +55,6 @@ export class AppComponent implements OnInit {
     let result = Calculation.compare(this.characterA.value['normal-size'], this.characterA.value['normal-measure'], this.characterA.value['changed-size'], this.characterA.value['changed-measure'], this.characterB.value['normal-size'], this.characterB.value['normal-measure'], this.characterB.value['changed-size'], this.characterB.value['changed-measure'])
     let valueA = result[0].val;
     let valueB = result[1].val;
-    debugger;
     if(Math.floor(valueA) != valueA){
       valueA = valueA.toFixed(2);
     }

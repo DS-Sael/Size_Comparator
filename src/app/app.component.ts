@@ -14,6 +14,8 @@ export class AppComponent implements OnInit {
   characterB: FormGroup;
   descCharacterA: string;
   descCharacterB: string;
+  imageSrcA: string;
+  imageSrcB: string;
 
   ngOnInit() {
     this.descCharacterA = "";
@@ -64,6 +66,8 @@ export class AppComponent implements OnInit {
     }
     let compareImageA = ImageTable.findCloseSize(Calculation.toMillimeter(valueA, result[0].unit));
     let compareImageB = ImageTable.findCloseSize(Calculation.toMillimeter(valueB, result[1].unit));
+    this.imageSrcA = compareImageA.src;
+    this.imageSrcB = compareImageB.src;
     let sizeImageA = Calculation.toBest(compareImageA.size,"mm");
     let sizeImageB = Calculation.toBest(compareImageB.size,"mm");
     let sizeImageValueA = sizeImageA.val;

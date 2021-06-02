@@ -7,8 +7,8 @@
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
-<app-compare-tile [description]="descCharacterA" [formGroup]="characterA" class="character-1"></app-compare-tile>
-<app-compare-tile [description]="descCharacterB" [formGroup]="characterB" class="character-2"></app-compare-tile>
+<app-compare-tile [description]="descCharacterA" [imageSrc]="imageSrcA" [formGroup]="characterA" class="character-1"></app-compare-tile>
+<app-compare-tile [description]="descCharacterB" [imageSrc]="imageSrcB" [formGroup]="characterB" class="character-2"></app-compare-tile>
 <div class="button-location">
 <button class="compare-button" mat-raised-button (click)="send()" color="primary">Comparer</button>
 </div>

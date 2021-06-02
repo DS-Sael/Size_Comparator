@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormGroup} from "@angular/forms";
+import {Constants} from "../constants";
 
 @Component({
   selector: 'app-compare-tile',
@@ -11,7 +12,9 @@ export class CompareTileComponent implements OnInit {
   formGroup: FormGroup;
   @Input()
   description: string;
-
+  @Input()
+  imageSrc: string;
+  imagePlaceholder = Constants.IMAGE_URL+'empty.png';
   constructor() { }
 
   ngOnInit(): void {

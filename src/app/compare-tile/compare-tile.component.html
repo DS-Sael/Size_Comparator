@@ -48,7 +48,8 @@
     </mat-grid-list>
     </mat-card-content>
     <div class="compare-image">
-      <img alt="compared-image" mat-card-image src="../../assets/images/compare/eiffel_tower.png"/>
+      <img *ngIf="imageSrc!='' && imageSrc!=null" alt="compared-image" mat-card-image [src]="imageSrc"/>
+      <img *ngIf="imageSrc=='' || imageSrc==null" alt="compared-image" mat-card-image [src]="imagePlaceholder"/>
     </div>
   </mat-card>
 </form>

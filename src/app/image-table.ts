@@ -4,9 +4,9 @@ import {Constants} from "./constants";
 export class ImageTable {
 
   private static imageTable = [
-    new CompareImage(0.6, Constants.IMAGE_URL+"sang.png", "un grain de sable"),
-    new CompareImage(3, Constants.IMAGE_URL+"puce.png", "une puce"),
-    new CompareImage(10, Constants.IMAGE_URL+"ant.png", "une fourmi"),
+    new CompareImage(0.6, Constants.IMAGE_URL+"sang.jpg", "un grain de sable"),
+    new CompareImage(3, Constants.IMAGE_URL+"puce.jpg", "une puce"),
+    new CompareImage(10, Constants.IMAGE_URL+"ant.jpg", "une fourmi"),
     new CompareImage(88, Constants.IMAGE_URL+"mouse.jpg", "une souris"),
     new CompareImage(116, Constants.IMAGE_URL+"coke.jpg", "une canette de soda 33cl"),
     new CompareImage(1700, "", "un humain moyen"),

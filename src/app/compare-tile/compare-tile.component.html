@@ -1,7 +1,7 @@
 <form class="character-form" [formGroup]="formGroup" xmlns="">
   <mat-card class="character">
     <mat-form-field class="title-field character-name">
-      <mat-card-title><span class="side-by-side label">Nom : </span><span class="side-by-side title-input"><input
+      <mat-card-title><span class="side-by-side label">{{language.NAME}} : </span><span class="side-by-side title-input"><input
         matInput
         formControlName="character-name"
         name="character-name"
@@ -13,7 +13,7 @@
       <div>
       <mat-grid-tile>
           <mat-form-field class="field character-normal-size">
-            <mat-label>taille normale</mat-label>
+            <mat-label>{{language.IRL_SIZE}}</mat-label>
             <input placeholder="1.75" type="number" formControlName="normal-size" name="normal-size" matInput class="input" value="">
           </mat-form-field>
           <mat-form-field class="field measurement">
@@ -31,8 +31,8 @@
         <p class="description" [innerText]="description"></p>
       </mat-grid-tile>
       <mat-grid-tile>
-          <mat-form-field class="field character-new-size ">
-            <mat-label>taille modifiée</mat-label>
+          <mat-form-field class="field character-new-size">
+            <mat-label>{{language.MODIFIED_SIZE}}</mat-label>
             <input placeholder="1.75" type="number" formControlName="changed-size" name="changed-size" matInput class="input" value="">
           </mat-form-field>
           <mat-form-field  class="field measurement">

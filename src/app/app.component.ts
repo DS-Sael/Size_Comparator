@@ -2,6 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {Calculation} from "./calculation";
 import {ImageTable} from "./image-table";
+import {Language} from "./language/language";
+import {LangEnum} from "./language/lang-enum.enum";
+import {LanguageInterface} from "./language/language-interface";
+import {LangImageTable} from "./language/lang-image-table";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +20,18 @@ export class AppComponent implements OnInit {
   descCharacterB: string;
   imageSrcA: string;
   imageSrcB: string;
+  language: LanguageInterface;
+  imageLang: string;
+  imageLangTable = LangImageTable.table;
+  imageLangTableKey = Object.keys(LangImageTable.table);
 
+  constructor() {
+    this.language = Language.get();
+    Language.reload.subscribe(() => {
+      this.language = Language.get();
+      this.ngOnInit();
+    })
+  }
   ngOnInit() {
     this.descCharacterA = "";
     this.descCharacterB = "";
@@ -32,7 +47,7 @@ export class AppComponent implements OnInit {
     this.characterB.addControl('normal-measure',new FormControl(this.checkNull(localStorage.getItem('normal-measureB'),"m")));
     this.characterB.addControl('changed-size',new FormControl(this.checkNull(localStorage.getItem('changed-sizeB'))));
     this.characterB.addControl('changed-measure',new FormControl(this.checkNull(localStorage.getItem('changed-measureB'),"m")));
-
+    this.imageLang = LangImageTable.returnLangImage(this.language.LANG);
   }
 
   checkNull(toCheck: string, defaultValue = ""){
@@ -78,7 +93,17 @@ export class AppComponent implements OnInit {
     if(Math.floor(sizeImageValueB) != sizeImageValueB){
       sizeImageValueB = sizeImageValueB.toFixed(2);
     }
-    this.descCharacterA = `Pour ${this.characterA.value['character-name']}, ${this.characterB.value['character-name']} mesure ${valueA}${result[0].unit} soit approximativement ${compareImageA.name} (${sizeImageValueA}${sizeImageA.unit})`;
-    this.descCharacterB = `Pour ${this.characterB.value['character-name']}, ${this.characterA.value['character-name']} mesure ${valueB}${result[1].unit} soit approximativement ${compareImageB.name} (${sizeImageValueB}${sizeImageB.unit})`;
+    this.descCharacterA = this.language.DESCRIPTION(this.characterA.value['character-name'], this.characterB.value['character-name'],valueA,result[0].unit,compareImageA.name,sizeImageValueA,sizeImageA.unit);
+    this.descCharacterB = this.language.DESCRIPTION(this.characterB.value['character-name'], this.characterA.value['character-name'],valueB,result[1].unit,compareImageB.name,sizeImageValueB,sizeImageB.unit);
   }
+
+  switchLang(langEnum: string) {
+    if (langEnum == LangEnum.EN){
+      Language.switchLanguage(LangEnum.EN)
+    }
+    else{
+      Language.switchLanguage(LangEnum.FR)
+    }
+  }
+
 }

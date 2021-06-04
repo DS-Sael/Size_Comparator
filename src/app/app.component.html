@@ -2,13 +2,22 @@
   <mat-toolbar-row>
     <span>Size Comparator</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
+
+    <button mat-button [matMenuTriggerFor]="menu">
+      <img class="lang-image" [src]="imageLang">
+      <mat-icon>keyboard_arrow_down</mat-icon>
     </button>
+    <mat-menu #menu="matMenu">
+      <ng-template ngFor let-lang [ngForOf]="imageLangTableKey">
+      <button class="lang-button" mat-menu-item (click)="switchLang(lang)">
+        <img  class="lang-image image-button" [src]="imageLangTable[lang]"><span class="image-text-lang">{{lang}}</span>
+      </button>
+      </ng-template>
+    </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
 <app-compare-tile [description]="descCharacterA" [imageSrc]="imageSrcA" [formGroup]="characterA" class="character-1"></app-compare-tile>
 <app-compare-tile [description]="descCharacterB" [imageSrc]="imageSrcB" [formGroup]="characterB" class="character-2"></app-compare-tile>
 <div class="button-location">
-<button class="compare-button" mat-raised-button (click)="send()" color="primary">Comparer</button>
+<button class="compare-button" mat-raised-button (click)="send()" color="primary">{{language.COMPARE}}</button>
 </div>

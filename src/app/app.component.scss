@@ -20,3 +20,32 @@
   height:50px;
 }
 
+.lang-image {
+  height:30px;
+}
+
+.lang-text{
+  height:10px;
+}
+
+.lang-button{
+  display: flex;
+  vertical-align: middle;
+}
+
+.image-text-lang{
+  margin-left:10px;
+}
+
+.image-button {
+  padding-top:8px;
+}
+
+.lang-button p{
+
+}
+
+.mat-menu-item{
+  vertical-align: middle;
+  line-height: 3.5 !important;
+}

@@ -15,28 +15,30 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatMenuModule} from "@angular/material/menu";
+import {FlexLayoutModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
     AppComponent,
     CompareTileComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatGridListModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatMenuModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatGridListModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatMenuModule,
+        FlexLayoutModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

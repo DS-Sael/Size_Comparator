@@ -16,8 +16,14 @@
     </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
-<app-compare-tile [description]="descCharacterA" [imageSrc]="imageSrcA" [formGroup]="characterA" class="character-1"></app-compare-tile>
-<app-compare-tile [description]="descCharacterB" [imageSrc]="imageSrcB" [formGroup]="characterB" class="character-2"></app-compare-tile>
+<div class="compare-tiles" fxLayout="row wrap" fxLayoutGap="">
+  <div fxFlex.lt-md="100%" fxFlex.gt-md="50%">
+  <app-compare-tile [description]="descCharacterA" [imageSrc]="imageSrcA" [formGroup]="characterA" class="character-1"></app-compare-tile>
+  </div>
+  <div fxFlex.lt-md="100%" fxFlex.gt-md="50%">
+    <app-compare-tile [description]="descCharacterB" [imageSrc]="imageSrcB" [formGroup]="characterB" class="character-2"></app-compare-tile>
+  </div>
+</div>
 <div class="button-location">
 <button class="compare-button" mat-raised-button (click)="send()" color="primary">{{language.COMPARE}}</button>
 </div>

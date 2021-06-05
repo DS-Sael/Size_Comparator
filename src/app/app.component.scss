@@ -3,12 +3,9 @@
 }
 
 .character-1{
-  float:left;
-  width: 50%;
+
 }
 .character-2{
-  float:right;
-  width: 50%;
 }
 
 .button-location{
@@ -48,4 +45,8 @@
 .mat-menu-item{
   vertical-align: middle;
   line-height: 3.5 !important;
+}
+
+.compare-tiles {
+  display:flex;
 }

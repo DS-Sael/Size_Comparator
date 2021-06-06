@@ -1,7 +1,8 @@
 <form class="character-form" [formGroup]="formGroup" xmlns="">
   <mat-card class="character">
     <mat-form-field class="title-field character-name">
-      <mat-card-title><span class="side-by-side label">{{language.NAME}} : </span><span class="side-by-side title-input"><input
+      <mat-card-title><span class="side-by-side label">{{language.NAME}} : </span><span
+        class="side-by-side title-input"><input
         matInput
         formControlName="character-name"
         name="character-name"
@@ -9,33 +10,33 @@
       </mat-card-title>
     </mat-form-field>
     <mat-card-content>
-    <mat-grid-list cols="2" rowHeight="120px">
-      <div>
-      <mat-grid-tile>
+      <div gdAreas.gt-md="sizeA description | sizeB description"
+           gdAreas.lt-md="sizeA | sizeB | description">
+        <div gdArea="sizeA">
           <mat-form-field class="field character-normal-size">
             <mat-label>{{language.IRL_SIZE}}</mat-label>
-            <input placeholder="1.75" type="number" formControlName="normal-size" name="normal-size" matInput class="input" value="">
+            <input placeholder="1.75" type="number" formControlName="normal-size" name="normal-size" matInput
+                   class="input" value="">
           </mat-form-field>
           <mat-form-field class="field measurement">
-            <mat-select  formControlName="normal-measure" >
+            <mat-select formControlName="normal-measure">
               <mat-option value="km">km</mat-option>
               <mat-option value="m">m</mat-option>
               <mat-option value="cm">cm</mat-option>
               <mat-option value="mm">mm</mat-option>
             </mat-select>
           </mat-form-field>
-      </mat-grid-tile>
-      </div>
-      <div>
-      <mat-grid-tile rowspan="2">
-        <p class="description" [innerText]="description"></p>
-      </mat-grid-tile>
-      <mat-grid-tile>
+        </div>
+        <div gdArea="description">
+          <p class="description" [innerText]="description"></p>
+        </div>
+        <div gdArea="sizeB">
           <mat-form-field class="field character-new-size">
             <mat-label>{{language.MODIFIED_SIZE}}</mat-label>
-            <input placeholder="1.75" type="number" formControlName="changed-size" name="changed-size" matInput class="input" value="">
+            <input placeholder="1.75" type="number" formControlName="changed-size" name="changed-size" matInput
+                   class="input" value="">
           </mat-form-field>
-          <mat-form-field  class="field measurement">
+          <mat-form-field class="field measurement">
             <mat-select formControlName="changed-measure">
               <mat-option value="km">km</mat-option>
               <mat-option value="m">m</mat-option>
@@ -43,9 +44,8 @@
               <mat-option value="mm">mm</mat-option>
             </mat-select>
           </mat-form-field>
-      </mat-grid-tile>
+        </div>
       </div>
-    </mat-grid-list>
     </mat-card-content>
     <div class="compare-image">
       <img *ngIf="imageSrc!='' && imageSrc!=null" alt="compared-image" mat-card-image [src]="imageSrc"/>

@@ -10,7 +10,7 @@
     <mat-menu #menu="matMenu">
       <ng-template ngFor let-lang [ngForOf]="imageLangTableKey">
       <button class="lang-button" mat-menu-item (click)="switchLang(lang)">
-        <img  class="lang-image image-button" [src]="imageLangTable[lang]"><span class="image-text-lang">{{lang}}</span>
+        <img class="lang-image image-button" [src]="imageLangTable[lang]"><span class="image-text-lang">{{lang}}</span>
       </button>
       </ng-template>
     </mat-menu>

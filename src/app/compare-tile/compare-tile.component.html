@@ -12,7 +12,7 @@
     <mat-card-content>
       <div gdAreas.gt-md="sizeA description | sizeB description"
            gdAreas.lt-md="sizeA | sizeB | description">
-        <div gdArea="sizeA">
+        <div class="size-input" gdArea="sizeA">
           <mat-form-field class="field character-normal-size">
             <mat-label>{{language.IRL_SIZE}}</mat-label>
             <input placeholder="1.75" type="number" formControlName="normal-size" name="normal-size" matInput
@@ -30,7 +30,7 @@
         <div gdArea="description">
           <p class="description" [innerText]="description"></p>
         </div>
-        <div gdArea="sizeB">
+        <div class="size-input" gdArea="sizeB">
           <mat-form-field class="field character-new-size">
             <mat-label>{{language.MODIFIED_SIZE}}</mat-label>
             <input placeholder="1.75" type="number" formControlName="changed-size" name="changed-size" matInput

@@ -23,4 +23,14 @@ export class LanguageEN implements LanguageInterface{
   MOUSE = "a mouse";
   SODA_CAN_33CL = "a 33cl soda can";
   SUN = "the diameter of the sun";
+  SOCCER_FIELD = "a soccer pitch";
+  BIG_BEN = "Big Ben";
+  EMPIRE_STATE_BUILDING = "the Empire State Building";
+  ENGLISH_CHANNEL = "the English Channel";
+  GIRAFFE = "a Girafe";
+  PANAMA_CANAL = "the Panama canal";
+  PYRAMID_GIZA = "the Kheops Pyramid";
+  STATUE_OF_LIBERTY = "the Statue of Liberty";
+  TOWER_OF_PISA = "the Tower of Pisa";
+  WASHINGTON_MONUMENT = "the Washington Monument";
 }

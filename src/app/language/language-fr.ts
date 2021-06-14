@@ -23,4 +23,14 @@ export class LanguageFR implements LanguageInterface{
   MOUSE = "une souris";
   SODA_CAN_33CL = "une canette de soda de 33cl";
   SUN = "le diamètre du soleil";
+  SOCCER_FIELD = "un terrain de football";
+  BIG_BEN = "Big Ben";
+  EMPIRE_STATE_BUILDING = "L'Empire State Building";
+  ENGLISH_CHANNEL = "la Manche";
+  GIRAFFE = "une giraffe";
+  PANAMA_CANAL = "la longueur du canal Panama";
+  PYRAMID_GIZA = "la pyramide de Kheops";
+  STATUE_OF_LIBERTY = "la statue de la liberté";
+  TOWER_OF_PISA = "la tour de pise";
+  WASHINGTON_MONUMENT = "le Washington Monument";
 }
